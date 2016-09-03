@@ -151,7 +151,7 @@ function generateInputResponse()
 			}
 			else
 			{
-
+				$("#responseModalBody").html("You are young and married and have not started saving");
 			}
 		}
 
@@ -159,10 +159,54 @@ function generateInputResponse()
 	}
 	else if(age<50)
 	{
+		if(maritalStatus=="single")
+		{
+			if(savingStatus=="has")
+			{
+				$("#responseModalBody").html("You are old single and have started saving");
+			}
+			else
+			{
+				$("#responseModalBody").html("You are old single and have not started saving :(");
+			}
+		}
+		else
+		{
+			if(savingStatus=="has")
+			{ 
+				$("#responseModalBody").html("You are old and married, and have started saving :)");
+			}
+			else
+			{
+				$("#responseModalBody").html("You are old and married, and have not started saving :(");
+			}
+		}
 
 	}
 	else
 	{
+		if(maritalStatus=="single")
+		{
+			if(savingStatus=="has")
+			{
+				$("#responseModalBody").html("you super old and have started saving but are single.");
+			}
+			else
+			{
+				$("#responseModalBody").html("You are super old, havent started saving and are single. :(( ");
+			}
+		}
+		else
+		{
+			if(savingStatus=="has")
+			{ 
+				$("#responseModalBody").html("You are old married and started saving");
+			}
+			else
+			{
+				$("#responseModalBody").html("You are old married and have not started saving");
+			}
+		}
 
 	}
 	
@@ -653,9 +697,10 @@ function generateInputResponse()
 	      			<i class="fa fa-check" style="color:green;font-size:80px;" aria-hidden="true"></i>
 	      		</div> -->
 		
-        		<div id="responseModalBody">
+        		<div id="responseModalBody" style="font-size:18px;font-family:gkhs-n4,sans-serif;font-weight:100;">
         	
         		</div>
+        		<hr>
         		<div id="percentileBody" class="container" style="width:100%;padding-top:30px;">
         			<form>
         				<!-- <div class="col-sm-4">
@@ -714,7 +759,7 @@ function generateInputResponse()
 						<div class="col-sm-4">
 							<div class="form-group">
     							<label for="currentlySavedSlider">Amount currently saved</label>
-						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="200" data-slider-step="10" data-slider-value="20">
+						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="10000" data-slider-value="20000">
   							</div>
 						</div>
 						<br>
@@ -762,7 +807,7 @@ function generateInputResponse()
 							var currentAge=Number($("#inputAge").val());
 							var retirementCost=Number($("#retirementCostSlider").val());
 							
-							var currentSaved=Number($("#currentlySavedSlider").val());
+							var currentSaved=Number($("#currentlySavedSlider").val()/1000);
 
 
 
