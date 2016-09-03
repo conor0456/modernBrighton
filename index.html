@@ -1,0 +1,993 @@
+
+<!DOCTYPE html>
+<!-- todaymade -->
+<html lang="en">
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<!-- Bootstrap -->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<script src="js/bootstrap.min.js"></script>
+<!-- /Bootstrap -->
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="css/homepageStyle.css">
+<!-- /Custom CSS -->
+<link rel="stylesheet" type="text/css" href="css/flip-box.css">
+
+<link rel="shortcut icon" href="css/images/icon.ico" type="image/x-icon">
+<link rel="icon" href="css/images/icon.ico" type="image/x-icon">
+
+<script src="js/parallax.min.js"></script>
+<script src="js/bootstrap-slider.js"></script>
+<script src="js/chart.bundle.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="css/bootstrap-slider.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="Conor D'Arcy">
+<title>Brighton Investments</title>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','http://google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-74730043-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<script>
+$(document).ready
+(
+	function()
+	{
+		$("#daveRamsey").hover(function(){$("#flipTarget").toggleClass("ifb-hover")},function(){$("#flipTarget").toggleClass("ifb-hover")});
+		$('[data-toggle="tooltip"]').tooltip(); 
+		$(".changeGreen").hover(function(){
+    		$(this).toggleClass("btn-green");
+    		}, function(){
+    		$(this).toggleClass("btn-green");
+			});
+
+		if ("ontouchstart" in document.documentElement==false)
+		{
+  			$(".panel-heading").hover(function(){
+    		$(this).toggleClass("panel-hover");
+    		}, function(){
+    		$(this).toggleClass("panel-hover");
+			});
+		}
+		$('#navMain').css("opacity",1);
+
+		$(".btn-bordered").hover(function(){
+    		$(this).toggleClass("btn-white");
+    		}, function(){
+    		$(this).toggleClass("btn-white");
+			});
+
+		$(".btn-green-on-white").hover(function(){
+    		$(this).toggleClass("btn-green-on-white-hover");
+    		}, function(){
+    		$(this).toggleClass("btn-green-on-white-hover");
+			});
+
+		$('.slider').slider()
+
+
+    }
+
+
+);
+
+
+
+jQuery(function($){
+
+$(window).scroll(
+	function()
+	{if( $(this).scrollTop() == 0 ) 
+		{$('#navMain').css("opacity",1)}
+else
+	{
+		$('#navMain').css("opacity",.9)
+	}
+
+
+
+})
+
+});
+
+
+function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+
+function playPause()
+{
+	var video = document.getElementById("video");
+	if(video.paused)
+    {    
+        video.play();
+    	//$("#video").attr("controls",true);
+    	$("#playButton").css("visibility","hidden");
+    }
+    else
+    {
+        video.pause();
+    	//$("#video").removeAttr("controls");
+    	$("#playButton").css("visibility","visible");
+    }
+}
+
+
+
+function generateInputResponse()
+{
+	var age=$("#inputAge").val();
+	var maritalStatus=$("#inputMaritalStatus").val();
+	var savingStatus=$("#inputSavingStatus").val();
+
+	if(age<30)
+	{
+		if(maritalStatus=="single")
+		{
+			if(savingStatus=="has")
+			{
+				$("#responseModalBody").html("We have plenty of young clients like yourself. Most people your age struggle with knowing how much of their income needs to be saved for retirement. While many struggle to save enough, an equal amount of clients save too much and will retire with more than they could ever use. ");
+			}
+			else
+			{
+				$("#responseModalBody").html("We have plenty of young clients like yourself. Most people your age struggle with knowing how much of their income needs to be saved for retirement. While many struggle to save enough, an equal amount of clients save too much and will retire with more than they could ever use. Many people haven't started saving at your age, and it is nothing to be ashamed of. But be aware that financial planning is a time sensitive issue, and the earlier you start putting money away the better off you will be. ");
+			}
+		}
+		else
+		{
+			if(savingStatus=="has")
+			{ 
+				$("#responseModalBody").html("You are young and married, and have started saving");
+			}
+			else
+			{
+
+			}
+		}
+
+		
+	}
+	else if(age<50)
+	{
+
+	}
+	else
+	{
+
+	}
+	
+
+}
+
+
+
+
+
+</script>
+
+	<body>
+
+		
+		<div class="container-fluid" style='font-family:gkhs-n4,sans-serif;font-weight:100;'>
+		
+			
+			<div class="introDiv">
+				<div class="col-md-4">
+					<span style="font-size:50px;font-weight:500;">Brighton<br></span>
+					<span style="font-size:35px;font-weight:100">Advisors with the heart of a teacher</span>
+					<br>
+					<br>
+					<br>
+					<br>
+					<span style="font-size:20px;color:rgb(4, 13, 20);font-weight:100">Bringing financial security to families like yours since 2009.</span>
+				</div>
+				<div class="col-md-8" style="text-align:center">
+					<img style="height:450px;margin-top:-40px;margin-right:-90px" src="css/images/revisedBrightonLogoCut.png">
+				</div>
+			</div>
+
+	<div class="container-fluid" style='font-family:"DIN Web", "Hiragino Sans GB", STXihei, 华文细黑, "Microsoft YaHei", 微软雅黑, sans-serif;font-weight:100;'>
+
+
+
+
+
+
+		<div class="grayBackground">
+			
+		  	<div id="daveRamsey" class="row" style="height:auto;">		
+				<div class="col-sm-4" style="text-align:center;">
+					<img src="css/images/davePictureLower.png" style="height:400px;">
+				</div>
+				<div class="col-sm-8" style="text-align:center;margin-top:30px;margin-bottom:10px;">
+					<div id="daveRamseyTitle">
+					Endorsed by America's most <span style="color: rgb(33, 206, 153);">trusted</span> financial voice
+				</div>
+				<br>
+				<div id="daveRamseyMessage" class="" style="font-size:14px;">
+					We are proud that our founding partner Nick Maxwell has the distinct honor of being Dave Ramsey's Endorsed Local Provider for Investing in the greater Fresno area. Since 2013, Dave has referred hundreds of people just like you to our firm. 
+					<br>
+					<br>
+					<b><span style="font-size: 14px;">Dave Ramsey, LPL Financial, and Brighton Investment Advisors are separate entities.</span></b>
+					<br>
+					<br>
+					<a href="daveRamsey.html" ><button class="btn btn-sm btn-green-on-white">Learn More!</button></a>
+				</div>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="centered whiteBackground" style="min-height:500px;text-align:center;">
+			<div class="row divTitle" >
+				How it works	
+			</div> 
+			<div class="row" style="padding-top:50px;">
+				<div class="col-sm-3" >
+					<div class="glyphImage"><i class="fa fa-group fa-lg"></i></div>
+					<br>
+					<div class="glyphBody padding-left">
+						We meet face to face or over the phone to determine your financial goals and what we need to do to get you there.
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="glyphImage padding-right"><i class="fa fa-balance-scale fa-lg"></i> </div>
+					<br>
+					<div class="glyphBody">
+						We work with you to find your prefered risk and growth levels, ensuring you know the pros and cons of any decision you make.
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="glyphImage padding-right-right"><i class="fa fa-line-chart fa-lg"></i> </div>
+					<br>
+					<div class="glyphBody">
+						We construct the portfolio that best suits your needs and lifestyle, doing annual modifications to ensure that your needs are always met.
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="glyphImage padding-right-right"><i class="fa fa-motorcycle fa-lg"></i> </div>
+					<br>
+					<div class="glyphBody padding-right">
+						We ensure that you not only have enough money for a successful retirement, but that you are able to enjoy life along the way.
+					</div>
+				</div>
+			</div>	
+		</div>
+
+
+
+		<div class="grayBackground" style="height:500px;color:black;font-size:25px;text-align:center;">
+			<div class="row divTitle" >
+				Find out what we can do for you 
+			</div>
+			<div class="row" style="padding-top:150px;">
+				<form class="form-inline" >
+  					<div class="form-group">
+    					I am a 
+    					<input type="text" class="form-control" id="inputAge" style="width:50px;" value="45">
+  					</div>
+  					<div class="form-group">
+   						year old 
+    					<select class="form-control" id="inputMaritalStatus">
+  							<option>single</option>
+  							<option>married</option>
+						</select>
+  					</div>
+  					<div class="form-group">
+						adult who 
+    					<select class="form-control" id="inputSavingStatus">
+  							<option>hasn't</option>
+  							<option>has</option>
+						</select>
+    					started saving for retirement.
+  					</div>
+				</form>
+			</div>
+			<div class="row" style="padding-top:70px;">
+				<button class="btn btn-green-on-white" style="margin-left:-10px;" data-toggle="modal" data-target="#responseModal" onclick="generateInputResponse();makeGraph()">How am I doing</button>
+			</div>
+		</div>
+		
+		
+
+			
+
+
+
+
+
+
+
+
+		
+
+
+
+
+
+
+
+
+		
+
+		<div id="piggyDiv" class="greenBackground">
+			<div class="row" style="padding-top:50px;text-align:center">
+				<span class="glyphicon glyphicon-piggy-bank" aria-hidden="true" style="display: block; margin: 0px auto; text-align: center;color:white;font-size:300px;padding-top:30px;"></span>
+				<span style="font-size:36px;color:white;">Say hello to financial peace today</span>
+				<br>
+				<button class="btn btn-bordered" style="margin-top:20px;">
+					Sign up
+				</button>
+			</div>
+		</div>
+		
+		<div id="howWeMakeMoney" class="grayBackground centered">
+			<div class="row divTitle">
+				Our price
+			</div>
+			<div class="row divBody">
+				Choose to pay a one time fee or a percentage over time. Dave Ramsey suggests finding a planner who offers more than one type of pricing model, and we believe we fill that role. We understand that everyone has different needs, and we will work with you to get you the price you deserve. 
+			</div>
+			<div class="row">
+				
+			
+				<!-- <div class="glyphCircle" style="border-radius:50%;">
+					<div style="font-size:100px;padding-top:10px;"><i class="fa fa-money fa-lg"></i> </div>
+				</div>
+				<div class="glyphCircle">
+					<div style="font-size:100px;padding-top:10px;"><i class="fa fa-dollar fa-lg"></i> </div>
+				</div> -->
+				<div class="box">
+<div id="stay-in-place">
+	<h1>hello world</h1>
+	<p>ipsum dolorum caveat emptor veni vidi vici</p>
+</div>
+
+<div id="move-in-to-place">
+	<h2>I'm on top</h2>
+</div>
+</div>
+			</div>	
+		</div>
+
+
+		<!-- <div id="ourClients" class="whiteBackground centered">
+			<div class="row divTitle">
+				Our clients
+			</div>
+			<div class="row divBody">
+				Our clients are dope. Very dope
+			</div>
+			
+		</div> -->
+
+
+		<div id="pages">
+			<div class="row divTitle centered">
+				Our testimonials
+			</div>
+			<ul class="nav nav-tabs">
+				<li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+				<li><a data-toggle="tab" href="#page1">Page 1</a></li>
+				<li><a data-toggle="tab" href="#page2">Page 2</a></li>
+				<li><a data-toggle="tab" href="#page3">Page 3</a></li>
+			</ul>
+
+			<div class="tab-content">
+				<div id="home" class="tab-pane fade in active grayBackground">
+				  	
+				</div>
+				<div id="page1" class="tab-pane fade whiteBackground">
+					<h3>Menu 1</h3>
+					
+				</div>
+				<div id="page2" class="tab-pane fade grayBackground">
+				  	<h3>Menu 2</h3>
+				  	<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+				</div>
+				<div id="page3" class="tab-pane fade">
+				  	<h3>Menu 3</h3>
+				  	<p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="grayBackground" style="height:200px;">
+			
+		</div>
+
+
+
+
+
+
+
+
+
+
+		<div style="background-color: white; color:black;height:auto;min-height:80vh;padding-top:20px;">
+			<div class="col-sm-6" style="">
+				<span style="font-size:36px;margin-left:0px;">Why choose us?</span><br><br>
+				<div style="border-left: thin solid black;padding-left:5px;margin-left:70px;font-size:18px;">Here at Brighton, we've worked very hard to tailor our service and client experience to a specific kind of client: the modern long-term investor; busy, discerning and grounded. With so many choices for financial advisors, knowing the differences between them can mean everything to getting the right fit. </div>	
+			</div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Long Term Care</div>
+						<div class="panel-body collapse">
+							Ask anyone who has gone through this with a loved-one, paying for long-term care costs can ruin an otherwise sound financial plan.  We can show you several options to make sure all your work and planning does not go to waste, and help decide when the right age to get insurance might be.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Disability Insurance</div>
+						<div class="panel-body collapse">
+							Losing income due to a medium or long term disability is much more common than most people think, and the coverage most have through work is not remotely adequate.  We can help bridge the gap to ensure your goals stay on track, no matter what life might throw at you.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Life Insurance </div>
+						<div class="panel-body collapse">
+							Most people know that life insurance is important, but knowing how much coverage is right for you, and what kinds of policies are the best fit is where many get stuck.  Our expertise and unbiased advise can really help.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Comprehensive Financial Planning</div>
+						<div class="panel-body collapse">
+							We’ll take a look at all aspects of your financial picture and develop a plan to pursue your goals.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Retirement & Income Planning</div>
+						<div class="panel-body collapse">
+							When the time comes that you are financially ready to stop working or to pursue your other passions, we’ll help you plan the details of how exactly that’s going to work.
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Investment Portfolio </div>
+						<div class="panel-body collapse">
+							Whether you are investing in an IRA, ROTH, 529 or brokerage account, we’ll help you decide on appropriate investments to match your goals and personality.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Education Planning</div>
+						<div class="panel-body collapse">
+							 Planning for future college expenses can seem daunting, and the options available are overwhelming. We'll make things simple and help you do the best you can.
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Employer Sponsored Retirement Plan</div>
+						<div class="panel-body collapse">
+							We offer help with 401(k), 403(b), SEP IRA, SIMPLE IRA, profit sharing, Defined Benefits, and more. 
+						</div>
+					</div>
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Comprehensive Fiduciary Services</div>
+						<div class="panel-body collapse">
+							Address regulatory requirements and mitigate personal and corporate liability related to retirement plans.
+						</div>
+					</div>
+					<div class="panel panel-green">
+						<div class="panel-heading" onclick="$(this).siblings().toggleClass('collapse')">Executive Benefits</div>
+						<div class="panel-body collapse">
+							Strategies and Options to help Business Owners, their Executive Teams, and Highly Compensated Employees to prudently plan for retirement above and beyond what is capable with corporate retirement plans
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row" style="margin-top:100px;">
+				<span style="font-size:36px;margin-left:30px;">What makes us different?</span><br><br>
+				<div style="border-left: thin solid black;padding-left:5px;margin-left:100px;font-size:18px;padding-right:80px;">Here at Brighton, we've worked very hard to tailor our service and client experience to a specific kind of client: the modern long-term investor; busy, discerning and grounded. With so many choices for financial advisors, knowing the differences between them can mean everything to getting the right fit. From what type of firm they work with, to fee structures, to service models, to certifications and licenses, to investment philosophies, to types of investments they recommend, all of it matters greatly and we urge you to look deeply into the matter. This may be the most important professional relationship you have.</div>
+			</div>
+		</div>
+
+	</div>
+
+
+
+
+
+		
+		
+	
+
+ 		<!-- endorsements -->
+		<div style="padding-top:25px; -webkit-filter: grayscale(1);">
+			<div class="" style="text-align:center;">	
+				<div class="col-sm-4">
+					<div class="col-xs-6 endorsement">
+						<a href="https://www.daveramsey.com/elp"><img src="css/images/elp_logo.jpg" style="height:auto;width:100px;filter:grayscale(1)"></a>
+					</div>
+					<div class="col-xs-6 endorsement">
+						<a href="https://www.chrishogan360.com/"><img src="css/images/chris.png" style="width:100px;filter:grayscale(1)" ></a>
+					</div>
+				</div>
+				<div class="col-sm-4">
+					<div class="col-xs-6 endorsement">
+						<a href="https://www.smartdollar.com/"><img src="css/images/smartDollar.png" style="width:100px;" ></a>
+					</div>
+					<div class="col-xs-6 endorsement">
+						<a href="http://www.ahartbenefits.com/investment-advisors/"><img src="css/images/ahart.jpg" style="width: 50px;" ></a>
+
+					</div>
+				</div>
+				<div class="col-sm-4">
+						<div class="col-xs-6 endorsement">
+							<a href="http://www.clovischamber.com/about/board_of_directors"><img src="css/images/clovisChamber.jpg" style="width:100px;" ></a>
+						</div>
+						<div class="col-xs-6 endorsement">
+							<a href="http://ramseysolutions.com/"><img src="css/images/ramsey.png" style="width:100px;filter:" ></a>
+						</div>
+					</div>
+			</div>
+			<div class="endorsementRow" style="text-align:center;">
+					<div class="col-sm-4">
+						<div class="col-xs-6 endorsement">
+							<a href="http://www.clovischamber.com/programs/young_entrepreneurs_academy"><img src="css/images/YEA.jpg" style="width:50px;" ></a>
+						</div>
+						<div class="col-xs-6 endorsement">
+							<a href="http://businessstreetonline.com/40-under-40-nick-maxwell-lpl-financial/"><img src="css/images/businessStreet.png" style="width:100px;" ></a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="col-xs-6 endorsement">
+							<a href="http://clovisrotaryclub.com/Members.html" ><img src="css/images/rotory.jpg" style="width:50px;" ></a>
+						</div>
+						<div class="col-xs-6 endorsement">
+							<a href="http://www.kingsburgchamber.com/board-of-directors.html"><img src="css/images/kingsburgChamber.jpg" style="width:50px;" ></a>
+						</div>
+					</div>
+					<div class="col-sm-4">
+						<div class="col-xs-6 endorsement">
+							<a href="https://lplfinancial.lpl.com/"><img src="css/images/lpl.png" style="width:100px;" ></a>
+						</div>
+						<div class="col-xs-6 endorsement">
+							<a href="http://www.daveramsey.com/fpu/"><img src="css/images/financialPeace.png" style="width:100px;" ></a>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="footer" class="row" >
+			<div class="col-sm-8">
+				<div id="footerDisclaimer">
+					The content is developed from sources believed to be providing accurate information. The information in this material is not intended as tax or legal advice. Please consult legal or tax professionals for specific information regarding your individual situation. The opinions expressed and material provided are for general information, and should not be considered a solicitation for the purchase or sale of any security. The individuals of Brighton Investment Advisors are registered representatives with, and Securities and Advisory services offered through LPL Financial, a Registered Investment Advisor, Member FINRA/SIPC. The LPL Financial Registered Representatives associated with this site may only discuss and/or transact securities business with residents of the following states: CA, CO, GA, IA, ID, NC, OK, OR, TX, UT, & WA.
+					<br>
+					<br>
+					
+					<br>
+					<br>
+					
+				</div>
+			</div>
+			<div class="col-sm-2 footerText">
+				<div style="margin-top:50px;color:white;">
+					CONTACT
+					<br>
+					(559) 320 0285
+					<br>
+					info@brightonadvisors.com
+					
+					<br>
+					7050 N. Fresno Street
+					<br>
+					Suite 105
+					<br>
+					Fresno, Ca 93720
+
+				</div>
+				<div id="socialDiv">
+					<span class="fa-stack fa-lg" style="margin-left:-4px;">
+						
+	  					<i class="fa fa-square-o fa-stack-2x"></i>
+	  					<i class="fa fa-twitter fa-stack-1x"></i>
+					</span>
+					<span class="fa-stack fa-lg" >
+						
+	  					<i class="fa fa-square-o fa-stack-2x"></i>
+	  					<i class="fa fa-facebook fa-stack-1x"></i>
+					</span>
+					<span class="fa-stack fa-lg" >
+						
+	  					<i class="fa fa-square-o fa-stack-2x"></i>
+	  					<i class="fa fa-linkedin fa-stack-1x"></i>
+					</span>
+				</div>
+			</div>
+			<div class="col-sm-2 footerText">
+				<div style="margin-top:50px;color:white;">
+					LINKS
+					<br>
+					<a href="daveRamsey.html" style="color:white;">Dave Ramsey</a>
+					<!-- LITE<br>
+					<a href="aboutUs.html" style="color:white;">About Us</a> -->
+					<br>
+					<a href="contactUs.html" style="color:white;">Contact Us</a>
+					<br>
+					<a href="index.html" style="color:white;">Home</a>
+
+				</div>
+			</div>
+		</div> 
+
+</body>
+
+
+
+
+<div class="modal fade" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  	<div class="modal-dialog modal-lg" role="document">
+    	<div class="modal-content">
+      		<div class="modal-header">
+        		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		<h4 class="modal-title" id="myModalLabel">General Report</h4>
+      		</div>
+      		<div class="modal-body">
+	     		<!-- <div class="centered">
+	      			<i class="fa fa-check" style="color:green;font-size:80px;" aria-hidden="true"></i>
+	      		</div> -->
+		
+        		<div id="responseModalBody">
+        	
+        		</div>
+        		<div id="percentileBody" class="container" style="width:100%;padding-top:30px;">
+        			<form>
+        				<!-- <div class="col-sm-4">
+	        				<div class="form-group">
+						    	<label for="incomeBracket">Income Bracket</label>
+						    	<select class="form-control" id="incomeBracket" onchange="makeGraph()">
+						      		<option>0-30,000</option>
+						      		<option>30,000-60,000</option>
+						      		<option>60,000-90,000</option>
+						      		<option>90,000-120,000</option>
+						      		<option>Above 120,000</option>
+						    	</select>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+						    	
+								<label for="retirementCost">Expected retirement cost (monthly)</label>
+						    	<select class="form-control" id="retirementCost" onchange="makeGraph()">
+						      		<option>0-1000</option>
+						      		<option>1000-2000</option>
+						      		<option>2000-3000</option>
+						      		<option>3000-4000</option>
+						      		<option>4000-5000</option>
+						      		<option>Above 5000</option>
+						    	</select>
+
+							</div>
+						</div>	 -->
+						<!-- <div class="col-sm-4">
+							<div class="form-group">
+    							<label for="savedAmount">Amount saved to date</label>
+						    	<select class="form-control" id="savedAmount" onchange="makeGraph()">
+						      		<option>0-50,000</option>
+						      		<option>50,000-100,000</option>
+						      		<option>100,000-150,000</option>
+						      		<option>150,000-200,000</option>
+						      		<option>Above 200,000</option>
+						    	</select>
+  							</div>
+						</div>	 -->
+						<div class="col-sm-4">
+	        				<div class="form-group">
+						    	<label for="incomeSlider">Annual income</label>
+						    	<input type="text" class="form-control slider" id="incomeSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="5000" data-slider-value="60000">
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+						    	
+								<label for="retirementCostSlider">Retirement cost (monthly)</label>
+						    	<input type="text" class="form-control slider" id="retirementCostSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="10000" data-slider-step="500" data-slider-value="4000">
+
+							</div>
+						</div>	
+						<div class="col-sm-4">
+							<div class="form-group">
+    							<label for="currentlySavedSlider">Amount currently saved</label>
+						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="200" data-slider-step="10" data-slider-value="20">
+  							</div>
+						</div>
+						<br>
+						<div class="col-sm-4">
+	        				<div class="form-group">
+						    	<label for="savedMonthly">Amount saved per month</label>
+						    	<input type="text" class="form-control slider" id="savedMonthly" onchange="makeGraph()" data-slider-min="0" data-slider-max="2000" data-slider-step="50" data-slider-value="300">
+							</div>	
+						</div>
+						
+						<div class="col-sm-4">
+	        				<div class="form-group">
+						    	<label for="retirementAge">Expected age of retirement</label>
+						    	<input type="text" class="form-control slider" id="retirementAge" onchange="makeGraph()" data-slider-min="45" data-slider-max="80" data-slider-step="1" data-slider-value="65">
+							</div>	
+						</div>
+						<div class="col-sm-4">
+	        				<div class="form-group">
+						    	<label for="pensionContribution">Pension Contribution (monthly)</label>
+						    	<input type="text" class="form-control slider" id="pensionContribution" onchange="makeGraph()" data-slider-min="0" data-slider-max="12000" data-slider-step="500" data-slider-value="0">
+							</div>	
+						</div>
+        			</form>
+        		</div>
+        		<div id="percentileGraph" class="container" style="margin-top:40px;">
+        			<div class="col-sm-6">
+        				<canvas id="myChart" width="100" height="100" style="max-width:450px;max-height:450px;"></canvas>
+        			</div>
+        			<div class="col-sm-6" style="width:30%;padding-top:40px;margin-left:-60px;font-size:18px;font-family:gkhs-n4,sans-serif;font-weight:100;" >
+        				With an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. With an average monthly spending of <span class="greenLetters" id="retirementRequirement"> </span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>.
+        			</div>
+        			
+
+
+
+
+
+
+
+
+        			<script>
+						function makeGraph()
+						{
+							var currentSalary=Number($("#incomeSlider").val());
+							var currentAge=Number($("#inputAge").val());
+							var retirementCost=Number($("#retirementCostSlider").val());
+							
+							var currentSaved=Number($("#currentlySavedSlider").val());
+
+
+
+							var pensionContribution=Number($("#pensionContribution").val());
+
+
+
+							var monthlySaved=Number($("#savedMonthly").val());
+							var comparisonCurrentSaved;
+							var comparisonMonthlySaved;
+							var retirementAge=Number($("#retirementAge").val());
+
+
+
+							var labelArray=[];
+							var userValueArray=[];
+							var comparisonValueArray=[];
+							var finalTotal;
+
+							//From http://www.investopedia.com/articles/personal-finance/011216/average-retirement-savings-age-2016.asp
+							if(currentAge<30)
+							{
+								comparisonCurrentSaved=16;
+							}
+							else if(currentAge<40)
+							{
+								comparisonCurrentSaved=40;
+							}
+							else if(currentAge<50)
+							{
+								comparisonCurrentSaved=63;
+							}
+							else if(currentAge<60)
+							{
+								comparisonCurrentSaved=117;
+							}
+							else
+							{
+								comparisonCurrentSaved=172;
+							}
+
+
+							// if(currentSalary=="0-30,000")
+							// {
+							// 	currentSalary=15000;
+							// }
+							// else if(currentSalary=="30,000-60,000")
+							// {
+							// 	currentSalary=45000;
+							// }
+							// else if(currentSalary=="60,000-90,000")
+							// {
+							// 	currentSalary=75000;
+							// }
+							// else if(currentSalary=="90,000-120,000")
+							// {
+							// 	currentSalary=105000;
+							// }
+							// else
+							// {
+							// 	currentSalary=120000;
+							// }
+							comparisonMonthlySaved=Math.round((currentSalary/12)*.2);
+
+
+							// if(currentSaved=="0-50,000")
+							// {
+							// 	currentSaved=25;
+							// }
+							// else if(currentSaved=="50,000-100,000")
+							// {
+							// 	currentSaved=75;
+							// }
+							// else if(currentSaved=="100,000-150,000")
+							// {
+							// 	currentSaved=125;
+							// }
+							// else if(currentSaved=="150,000-200,000")
+							// {
+							// 	currentSaved=175;
+							// }
+							// else
+							// {
+							// 	currentSaved=250;
+							// }
+							
+							// if(retirementCost=="0-1000")
+							// {
+							// 	retirementCost=750;
+							// }
+							// else if(retirementCost=="1000-2000")
+							// {
+							// 	retirementCost=1750;
+							// }
+							// else if(retirementCost=="2000-3000")
+							// {
+							// 	retirementCost=2750;
+							// }
+							// else if(retirementCost=="3000-4000")
+							// {
+							// 	retirementCost=3750;
+							// }
+							// else if(retirementCost=="4000-5000")
+							// {	
+							// 	retirementCost=4750;
+							// }
+							// else
+							// {
+							// 	retirementCost=6000;
+							// }
+
+
+
+
+
+
+							
+							for(var i = $("#inputAge").val(); i<= $("#retirementAge").val(); i++)
+							{
+								labelArray.push(String(i));
+								if(i==$("#inputAge").val())
+								{
+									userValueArray.push(currentSaved);
+									comparisonValueArray.push(comparisonCurrentSaved);
+								}
+								else
+								{
+									userValueArray.push((userValueArray[i-currentAge-1]+(.012*monthlySaved))*1.08);
+									finalTotal=(userValueArray[i-currentAge-1]+(.012*monthlySaved))*1.08;
+									comparisonValueArray.push((comparisonValueArray[i-currentAge-1]+(.012*comparisonMonthlySaved))*1.08);
+									
+								}
+								
+							}
+							$("#monthlySavings").html(numberWithCommas($("#savedMonthly").val()));
+							$("#finalTotal").html(numberWithCommas(Math.round(finalTotal)));
+							$("#retirementAgeSpan").html($("#retirementAge").val());
+							$("#retirementRequirement").html(numberWithCommas(retirementCost));
+							
+							if(pensionContribution>retirementCost)
+							{
+								$("#expireAge").html(110);
+							}
+
+							else if(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge))>110 )
+							{
+								$("#expireAge").html(110);
+							}
+							else
+							{
+								$("#expireAge").html(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge)));
+							}
+
+							
+
+
+
+
+
+
+							var ctx = document.getElementById("myChart");
+							var myChart = new Chart(ctx, {
+							    type: 'line',
+							    data: {
+							        labels: labelArray,
+							        datasets: [{
+							            label: 'Your Portfolio (With Brighton, in thousands)',
+							            data: userValueArray,
+							            backgroundColor: [
+							                'rgba(255, 99, 132, 0.2)',
+							                
+							            ],
+							            borderColor: [
+							                'rgba(255, 99, 132, 1)',
+							                
+							            ],
+							            borderWidth: 1
+							        },
+							        {
+							        	label: 'Average Portfolio (For your age and income)',
+							        	data: comparisonValueArray,
+							        	
+							        }
+
+
+
+							        ]
+							    },
+							    options: {
+							        scales: {
+							            yAxes: [{
+							                ticks: {
+							                    beginAtZero:true
+							                }
+							            }]
+							        }
+							    }
+							});
+					}
+					</script>
+        		</div>
+      		</div>
+      		<div class="modal-footer">
+        		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        		
+      		</div>
+    	</div>
+  	</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
