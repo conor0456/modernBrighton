@@ -947,19 +947,32 @@ function generateInputResponse()
 							$("#retirementAgeSpan").html($("#retirementAge").val());
 							$("#retirementRequirement").html(numberWithCommas(retirementCost));
 							
-							if(pensionContribution>retirementCost)
+							var moneyLeft=finalTotal*1000;
+							var expireAge=retirementAge;
+							while(moneyLeft>0)
 							{
-								$("#expireAge").html(110);
+								moneyLeft=moneyLeft-(12*retirementCost)+(12*pensionContribution);
+								moneyLeft=1.06*moneyLeft;
+								expireAge++;
+								if(expireAge>=110)
+								{
+									break;
+								}
 							}
+							$("#expireAge").html(expireAge);
+							// if(pensionContribution>retirementCost)
+							// {
+							// 	$("#expireAge").html(110);
+							// }
 
-							else if(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge))>110 )
-							{
-								$("#expireAge").html(110);
-							}
-							else
-							{
-								$("#expireAge").html(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge)));
-							}
+							// else if(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge))>110 )
+							// {
+							// 	$("#expireAge").html(110);
+							// }
+							// else
+							// {
+							// 	$("#expireAge").html(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge)));
+							// }
 
 							
 
