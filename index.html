@@ -752,7 +752,7 @@ function generateInputResponse()
 							<div class="form-group">
 						    	
 								<label for="retirementCostSlider">Retirement cost (monthly)</label>
-						    	<input type="text" class="form-control slider" id="retirementCostSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="10000" data-slider-step="500" data-slider-value="4000">
+						    	<input type="text" class="form-control slider" id="retirementCostSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="10000" data-slider-step="500" data-slider-value="5000">
 
 							</div>
 						</div>	
@@ -789,7 +789,7 @@ function generateInputResponse()
         				<canvas id="myChart" width="100" height="100" style="max-width:450px;max-height:450px;"></canvas>
         			</div>
         			<div class="col-sm-6" style="width:30%;padding-top:40px;margin-left:-60px;font-size:18px;font-family:gkhs-n4,sans-serif;font-weight:100;" >
-        				With an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. With an average monthly spending of <span class="greenLetters" id="retirementRequirement"> </span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>.
+        				With an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. With an average monthly spending of <span class="greenLetters" id="retirementRequirement"> </span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>, leaving behind <span id="leftoverMoney" class="greenLetters"></span> dollars.
         			</div>
         			
 
@@ -870,7 +870,7 @@ function generateInputResponse()
 							// {
 							// 	currentSalary=120000;
 							// }
-							comparisonMonthlySaved=Math.round((currentSalary/12)*.2);
+							
 
 
 							// if(currentSaved=="0-50,000")
@@ -924,7 +924,8 @@ function generateInputResponse()
 
 
 
-							
+							comparisonMonthlySaved=Math.round((currentSalary/12)*.15);
+
 							for(var i = $("#inputAge").val(); i<= $("#retirementAge").val(); i++)
 							{
 								labelArray.push(String(i));
@@ -954,12 +955,15 @@ function generateInputResponse()
 								moneyLeft=moneyLeft-(12*retirementCost)+(12*pensionContribution);
 								moneyLeft=1.06*moneyLeft;
 								expireAge++;
-								if(expireAge>=110)
+								if(expireAge>=105)
 								{
 									break;
 								}
 							}
 							$("#expireAge").html(expireAge);
+							if(moneyLeft<0)
+							{moneyLeft=0;}
+							$("#leftoverMoney").html(numberWithCommas(Math.round(moneyLeft)));
 							// if(pensionContribution>retirementCost)
 							// {
 							// 	$("#expireAge").html(110);
