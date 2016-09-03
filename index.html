@@ -703,84 +703,57 @@ function generateInputResponse()
         		<hr>
         		<div id="percentileBody" class="container" style="width:100%;padding-top:30px;">
         			<form>
-        				<!-- <div class="col-sm-4">
-	        				<div class="form-group">
-						    	<label for="incomeBracket">Income Bracket</label>
-						    	<select class="form-control" id="incomeBracket" onchange="makeGraph()">
-						      		<option>0-30,000</option>
-						      		<option>30,000-60,000</option>
-						      		<option>60,000-90,000</option>
-						      		<option>90,000-120,000</option>
-						      		<option>Above 120,000</option>
-						    	</select>
-							</div>
-						</div>
-						<div class="col-sm-4">
-							<div class="form-group">
-						    	
-								<label for="retirementCost">Expected retirement cost (monthly)</label>
-						    	<select class="form-control" id="retirementCost" onchange="makeGraph()">
-						      		<option>0-1000</option>
-						      		<option>1000-2000</option>
-						      		<option>2000-3000</option>
-						      		<option>3000-4000</option>
-						      		<option>4000-5000</option>
-						      		<option>Above 5000</option>
-						    	</select>
-
-							</div>
-						</div>	 -->
-						<!-- <div class="col-sm-4">
-							<div class="form-group">
-    							<label for="savedAmount">Amount saved to date</label>
-						    	<select class="form-control" id="savedAmount" onchange="makeGraph()">
-						      		<option>0-50,000</option>
-						      		<option>50,000-100,000</option>
-						      		<option>100,000-150,000</option>
-						      		<option>150,000-200,000</option>
-						      		<option>Above 200,000</option>
-						    	</select>
-  							</div>
-						</div>	 -->
 						<div class="col-sm-4">
 	        				<div class="form-group">
 						    	<label for="incomeSlider">Annual income</label>
-						    	<input type="text" class="form-control slider" id="incomeSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="5000" data-slider-value="60000">
+						    	<input type="text" class="form-control slider" id="incomeSlider" onchange="triggerFlag(1);makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="5000" data-slider-value="60000">
 							</div>
 						</div>
 						<div class="col-sm-4">
-							<div class="form-group">
-						    	
-								<label for="retirementCostSlider">Retirement cost (monthly)</label>
-						    	<input type="text" class="form-control slider" id="retirementCostSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="10000" data-slider-step="500" data-slider-value="5000">
-
-							</div>
-						</div>	
-						<div class="col-sm-4">
-							<div class="form-group">
-    							<label for="currentlySavedSlider">Amount currently saved</label>
-						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="10000" data-slider-value="20000">
-  							</div>
-						</div>
-						<br>
-						<div class="col-sm-4">
-	        				<div class="form-group">
-						    	<label for="savedMonthly">Amount saved per month</label>
-						    	<input type="text" class="form-control slider" id="savedMonthly" onchange="makeGraph()" data-slider-min="0" data-slider-max="2000" data-slider-step="50" data-slider-value="300">
-							</div>	
+		        				<div class="form-group">
+							    	<label for="savedMonthly">Amount saved per month</label>
+							    	<input type="text" class="form-control slider" id="savedMonthly" onchange="triggerFlag(2);makeGraph()" data-slider-min="0" data-slider-max="3000" data-slider-step="50" data-slider-value="300">
+								</div>	
 						</div>
 						
 						<div class="col-sm-4">
-	        				<div class="form-group">
-						    	<label for="retirementAge">Expected age of retirement</label>
-						    	<input type="text" class="form-control slider" id="retirementAge" onchange="makeGraph()" data-slider-min="45" data-slider-max="80" data-slider-step="1" data-slider-value="65">
-							</div>	
+							<div class="form-group">
+    							<label for="currentlySavedSlider">Amount currently saved</label>
+						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="triggerFlag(3);makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="10000" data-slider-value="20000">
+  							</div>
 						</div>
-						<div class="col-sm-4">
-	        				<div class="form-group">
-						    	<label for="pensionContribution">Pension Contribution (monthly)</label>
-						    	<input type="text" class="form-control slider" id="pensionContribution" onchange="makeGraph()" data-slider-min="0" data-slider-max="12000" data-slider-step="500" data-slider-value="0">
+						<br>
+						<div class="centered">
+							<!-- <button data-toggle="collapse" data-target="#collapsableOptions" id="moreOptionsButton" class="btn btn-green-on-white">More options</button> -->
+						</div>
+							
+						
+						<div class="hidden" id="hiddenOptions">
+							
+							<div class="col-sm-4">
+								<div class="form-group">
+						    	
+									<label for="retirementCostSlider">Retirement cost (monthly)</label>
+						    		<input type="text" class="form-control slider" id="retirementCostSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="10000" data-slider-step="500" data-slider-value="5000">
+
+								</div>
 							</div>	
+							<div class="col-sm-4">
+		        				<div class="form-group">
+							    	<label for="retirementAge">Expected age of retirement</label>
+							    	<input type="text" class="form-control slider" id="retirementAge" onchange="makeGraph()" data-slider-min="45" data-slider-max="80" data-slider-step="1" data-slider-value="65">
+								</div>	
+							</div>
+							<div class="col-sm-4">
+		        				<!-- <div class="form-group">
+							    	<label for="pensionContribution">Pension Contribution (monthly)</label>
+							    	<input type="text" class="form-control slider" id="pensionContribution" onchange="makeGraph()" data-slider-min="0" data-slider-max="12000" data-slider-step="500" data-slider-value="0">
+								</div>	 -->
+								<div class="form-group">
+							    	<label for="returnRateSlider">Annual rate of return</label>
+							    	<input type="text" class="form-control slider" id="returnRateSlider" onchange="makeGraph()" data-slider-min="0" data-slider-max="15" data-slider-step="1" data-slider-value="6">
+								</div>
+							</div>
 						</div>
         			</form>
         		</div>
@@ -789,7 +762,7 @@ function generateInputResponse()
         				<canvas id="myChart" width="100" height="100" style="max-width:450px;max-height:450px;"></canvas>
         			</div>
         			<div class="col-sm-6" style="width:30%;padding-top:40px;margin-left:-60px;font-size:18px;font-family:gkhs-n4,sans-serif;font-weight:100;" >
-        				With an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. With an average monthly spending of <span class="greenLetters" id="retirementRequirement"> </span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>, leaving behind <span id="leftoverMoney" class="greenLetters"></span> dollars.
+        				With <span id="currentSaveSpan" class="greenLetters"></span> dollars currently in your retirement plan and an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. <span id="hiddenSpan" hidden>With an average monthly spending of <span class="greenLetters" id="retirementRequirement"> </span> and an average annual return of <span id="returnSpan" class="greenLetters"></span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>, leaving behind <span id="leftoverMoney" class="greenLetters"></span> dollars.</span>
         			</div>
         			
 
@@ -801,8 +774,49 @@ function generateInputResponse()
 
 
         			<script>
+						var annualIncomeFlag=false;
+						var monthlySavedFlag=false;
+						var totalSavedFlag=false;
+
+
+
+
+						// var button = document.getElementById('moreOptionsButton')
+    		// 			button.addEventListener('click',hideshow,false);
+
+    		// 			function hideshow() {this.style.display = 'none'}
+
+
+
+
+    					function triggerFlag(type)
+    					{
+    						if(type==1)
+    						{
+    							annualIncomeFlag=true;
+    						}
+    						if(type==2)
+    						{
+    							monthlySavedFlag=true;
+    						}
+    						if(type==3)
+    						{
+    							totalSavedFlag=true;
+    						}
+    						
+    					}
+
+
 						function makeGraph()
 						{
+							
+
+							if(annualIncomeFlag+monthlySavedFlag+totalSavedFlag==3)
+							{
+								$("#hiddenOptions").removeClass("hidden").addClass("showing");
+								$("#hiddenSpan").removeAttr("hidden");
+							}
+							var socialSecurityMonthly=1341;
 							var currentSalary=Number($("#incomeSlider").val());
 							var currentAge=Number($("#inputAge").val());
 							var retirementCost=Number($("#retirementCostSlider").val());
@@ -811,9 +825,9 @@ function generateInputResponse()
 
 
 
-							var pensionContribution=Number($("#pensionContribution").val());
-
-
+							var pensionContribution= 0;//Number($("#pensionContribution").val());
+							var returnRate=1+Number($("#returnRateSlider").val()/100);
+							
 
 							var monthlySaved=Number($("#savedMonthly").val());
 							var comparisonCurrentSaved;
@@ -850,75 +864,9 @@ function generateInputResponse()
 							}
 
 
-							// if(currentSalary=="0-30,000")
-							// {
-							// 	currentSalary=15000;
-							// }
-							// else if(currentSalary=="30,000-60,000")
-							// {
-							// 	currentSalary=45000;
-							// }
-							// else if(currentSalary=="60,000-90,000")
-							// {
-							// 	currentSalary=75000;
-							// }
-							// else if(currentSalary=="90,000-120,000")
-							// {
-							// 	currentSalary=105000;
-							// }
-							// else
-							// {
-							// 	currentSalary=120000;
-							// }
+
+
 							
-
-
-							// if(currentSaved=="0-50,000")
-							// {
-							// 	currentSaved=25;
-							// }
-							// else if(currentSaved=="50,000-100,000")
-							// {
-							// 	currentSaved=75;
-							// }
-							// else if(currentSaved=="100,000-150,000")
-							// {
-							// 	currentSaved=125;
-							// }
-							// else if(currentSaved=="150,000-200,000")
-							// {
-							// 	currentSaved=175;
-							// }
-							// else
-							// {
-							// 	currentSaved=250;
-							// }
-							
-							// if(retirementCost=="0-1000")
-							// {
-							// 	retirementCost=750;
-							// }
-							// else if(retirementCost=="1000-2000")
-							// {
-							// 	retirementCost=1750;
-							// }
-							// else if(retirementCost=="2000-3000")
-							// {
-							// 	retirementCost=2750;
-							// }
-							// else if(retirementCost=="3000-4000")
-							// {
-							// 	retirementCost=3750;
-							// }
-							// else if(retirementCost=="4000-5000")
-							// {	
-							// 	retirementCost=4750;
-							// }
-							// else
-							// {
-							// 	retirementCost=6000;
-							// }
-
 
 
 
@@ -936,47 +884,39 @@ function generateInputResponse()
 								}
 								else
 								{
-									userValueArray.push((userValueArray[i-currentAge-1]+(.012*monthlySaved))*1.08);
-									finalTotal=(userValueArray[i-currentAge-1]+(.012*monthlySaved))*1.08;
-									comparisonValueArray.push((comparisonValueArray[i-currentAge-1]+(.012*comparisonMonthlySaved))*1.08);
+									userValueArray.push((userValueArray[i-currentAge-1]+(.012*monthlySaved))*returnRate);
+									finalTotal=(userValueArray[i-currentAge-1]+(.012*monthlySaved))*returnRate;
+									comparisonValueArray.push((comparisonValueArray[i-currentAge-1]+(.012*comparisonMonthlySaved))*returnRate);
 									
 								}
 								
 							}
+							$("#currentSaveSpan").html(numberWithCommas(currentSaved*1000));
 							$("#monthlySavings").html(numberWithCommas($("#savedMonthly").val()));
 							$("#finalTotal").html(numberWithCommas(Math.round(finalTotal)));
 							$("#retirementAgeSpan").html($("#retirementAge").val());
 							$("#retirementRequirement").html(numberWithCommas(retirementCost));
-							
+							$("#returnSpan").html(Math.round(Number(returnRate-1)*100)+"%");
 							var moneyLeft=finalTotal*1000;
 							var expireAge=retirementAge;
-							while(moneyLeft>0)
+							
+
+							while(moneyLeft>0 && expireAge<95)
 							{
-								moneyLeft=moneyLeft-(12*retirementCost)+(12*pensionContribution);
+								moneyLeft=moneyLeft-(12*retirementCost)+(12*pensionContribution)+(12*socialSecurityMonthly);
 								moneyLeft=1.06*moneyLeft;
 								expireAge++;
-								if(expireAge>=105)
-								{
-									break;
-								}
+								
 							}
+							
+
 							$("#expireAge").html(expireAge);
 							if(moneyLeft<0)
 							{moneyLeft=0;}
 							$("#leftoverMoney").html(numberWithCommas(Math.round(moneyLeft)));
-							// if(pensionContribution>retirementCost)
-							// {
-							// 	$("#expireAge").html(110);
-							// }
+							
 
-							// else if(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge))>110 )
-							// {
-							// 	$("#expireAge").html(110);
-							// }
-							// else
-							// {
-							// 	$("#expireAge").html(Math.round((finalTotal/(.012*(retirementCost-pensionContribution)))+Number(retirementAge)));
-							// }
+
 
 							
 

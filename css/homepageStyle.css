@@ -16,7 +16,14 @@ Offwhite: #F9F9FA;
 /**{ border: 1px solid red; }*/
 
 /*cstlib*/
-
+.hidden
+{
+    visibility: none;
+}
+.showing
+{
+    visibility: visible;
+}
 .greenLetters
 {
     color: rgb(33, 206, 153);
