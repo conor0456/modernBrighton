@@ -136,11 +136,11 @@ function generateInputResponse()
 		{
 			if(savingStatus=="has")
 			{
-				$("#responseModalBody").html("We have plenty of young clients like yourself. Most people your age struggle with knowing how much of their income needs to be saved for retirement. While many struggle to save enough, an equal amount of clients save too much and will retire with more than they could ever use. ");
+				$("#responseModalBody").html("We have plenty of young single clients like yourself. Most people your age struggle with knowing how much of their income needs to be saved for retirement. While many struggle to save enough, an equal amount of clients save too much and will retire with more than they could ever use. Having already started saving, you are ahead of the game.");
 			}
 			else
 			{
-				$("#responseModalBody").html("We have plenty of young clients like yourself. Most people your age struggle with knowing how much of their income needs to be saved for retirement. While many struggle to save enough, an equal amount of clients save too much and will retire with more than they could ever use. Many people haven't started saving at your age, and it is nothing to be ashamed of. But be aware that financial planning is a time sensitive issue, and the earlier you start putting money away the better off you will be. ");
+				$("#responseModalBody").html("We have plenty of young single clients like yourself. Most people your age struggle with knowing how much of their income needs to be saved for retirement. While many struggle to save enough, an equal amount of clients save too much and will retire with more than they could ever use. Many people haven't started saving at your age, and it is nothing to be ashamed of. But be aware that financial planning is a time sensitive issue, and the earlier you start putting money away the better off you will be. ");
 			}
 		}
 		else
@@ -706,7 +706,7 @@ function generateInputResponse()
 						<div class="col-sm-4">
 	        				<div class="form-group">
 						    	<label for="incomeSlider">Annual income</label>
-						    	<input type="text" class="form-control slider" id="incomeSlider" onchange="triggerFlag(1);makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="5000" data-slider-value="60000">
+						    	<input type="text" class="form-control slider" id="incomeSlider" onchange="triggerFlag(1);makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="5000" data-slider-value="40000">
 							</div>
 						</div>
 						<div class="col-sm-4">
@@ -719,7 +719,7 @@ function generateInputResponse()
 						<div class="col-sm-4">
 							<div class="form-group">
     							<label for="currentlySavedSlider">Amount currently saved</label>
-						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="triggerFlag(3);makeGraph()" data-slider-min="0" data-slider-max="200000" data-slider-step="10000" data-slider-value="20000">
+						    	<input type="text" class="form-control slider" id="currentlySavedSlider" onchange="triggerFlag(3);makeGraph()" data-slider-min="0" data-slider-max="250000" data-slider-step="5000" data-slider-value="20000">
   							</div>
 						</div>
 						<br>
@@ -762,7 +762,7 @@ function generateInputResponse()
         				<canvas id="myChart" width="100" height="100" style="max-width:450px;max-height:450px;"></canvas>
         			</div>
         			<div class="col-sm-6" style="width:30%;padding-top:40px;margin-left:-60px;font-size:18px;font-family:gkhs-n4,sans-serif;font-weight:100;" >
-        				With <span id="currentSaveSpan" class="greenLetters"></span> dollars currently in your retirement plan and an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. <span id="hiddenSpan" hidden>With an average monthly spending of <span class="greenLetters" id="retirementRequirement"> </span> and an average annual return of <span id="returnSpan" class="greenLetters"></span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>, leaving behind <span id="leftoverMoney" class="greenLetters"></span> dollars.</span>
+        				With <span id="currentSaveSpan" class="greenLetters"></span> dollars currently in your retirement plan and an average monthly saving of <span class="greenLetters" id="monthlySavings"> </span> dollars, you will have approximately <span class="greenLetters" id="finalTotal"> </span><span class="greenLetters">,000</span> dollars when you retire at the age of <span class="greenLetters" id="retirementAgeSpan"></span>. <span id="hiddenSpan" hidden>With an average monthly retirement budget of <span class="greenLetters" id="retirementRequirement"> </span> and an average annual return of <span id="returnSpan" class="greenLetters"></span>, this money will last you until you are <span class="greenLetters" id="expireAge"> </span>, leaving behind <span id="leftoverMoney" class="greenLetters"></span> dollars.</span>
         			</div>
         			
 
